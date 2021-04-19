@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Socket.io</title>
+    </head>
+ 
+    <body>
+        <h1>Communication avec socket.io !</h1>
+
+        <div id="tchat"></div>
+
+	    <input type="text" name="message" id="message">
+	    <button onclick="envoyer()">Envoyer</button>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:3000');
+
+            var pseudo = prompt("Veuillez entrer votre pseudo");
+
+            socket.emit('connection', pseudo);
+
+            socket.on("greeting",function(message){
+            	alert(message);
+            });
+
+            socket.on("append",function(message){
+            	document.getElementById("tchat").innerHTML+="<div><strong>"+pseudo+"</strong><br><p>"+message+"</p></div><br>";
+            });
+
+            socket.on("adduser",function(message){
+            	document.getElementById("tchat").innerHTML+="<div><p>"+message+"</p></div><br>";
+            });
+
+            function envoyer()
+            {
+            	socket.emit('send', document.getElementById("message").value);
+            }
+        </script>
+    </body>
+</html>

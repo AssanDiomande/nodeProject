@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+	
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Connexion</a>
+	</nav>
+	<div>
+		<div style="background-color: #DAFAFA; margin: 2% 10% 0 10%; padding: 8%; position: sticky;">
+			<form action="/user/login" method="POST">
+				<h1 style="position: absolute; margin: -5% 0% 0 0%;" id="infos">Veuillez vous connecter</h1><br>
+				<input style="width: 40%;" type="text" name="email" class="form-control" placeholder="email"><br>
+				<input style="width: 40%;" type="password" name="password" class="form-control" placeholder="password"><br>
+				<input type="submit" class="btn btn-info" id="send" value="Se connecter">
+			</form>
+		<div>
+	</div>
+</body>
+</html>
